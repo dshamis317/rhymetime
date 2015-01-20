@@ -1,32 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>RhymeTime</title>
+	<meta charset="UTF-8">
+	<title>RhymeTime</title>
 
-  <!-- Libraries -->
-  <script type="text/javascript" src="javascripts/libraries/jquery.js"></script>
-  <script type="text/javascript" src="javascripts/libraries/underscore.js"></script>
-  <script type="text/javascript" src="javascripts/libraries/backbone.js"></script>
+	<!-- Libraries -->
+	<script type="text/javascript" src="javascripts/libraries/jquery.js"></script>
+	<script type="text/javascript" src="javascripts/libraries/underscore.js"></script>
+	<script type="text/javascript" src="javascripts/libraries/backbone.js"></script>
 
-  <!-- Backbone -->
-  <script type="text/javascript" src="javascripts/backbone/models/wordModel.js"></script>
-  <script type="text/javascript" src="javascripts/backbone/views/words/wordView.js"></script>
-  <script type="text/javascript" src="javascripts/backbone/views/words/wordListView.js"></script>
-  <script type="text/javascript" src="javascripts/backbone/collections/wordCollection.js"></script>
+	<!-- Backbone -->
+	<script type="text/javascript" src="javascripts/backbone/models/wordModel.js"></script>
+	<script type="text/javascript" src="javascripts/backbone/views/words/wordView.js"></script>
+	<script type="text/javascript" src="javascripts/backbone/views/words/wordListView.js"></script>
+	<script type="text/javascript" src="javascripts/backbone/collections/wordCollection.js"></script>
 
-  <!-- App -->
-  <script type="text/javascripts/app.js"></script>
+	<!-- App -->
+	<script type="text/javascript" src="javascripts/app.js"></script>
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="stylesheets/styles.css">
+	<!-- Fonts -->
+	<link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+
+	<!-- Big Text Plugin -->
+	<script type="text/javascript" src="javascripts/libraries/bigtext.js"></script>
+
+	<!-- Stylesheets -->
+	<link rel="stylesheet" href="stylesheets/styles.css">
 </head>
 <body>
-  <nav>
-    <header>
-      <a href="/"><h1 class="title">RhymeTime</h1></a>
-    </header>
-
-  </nav>
+	<!-- PAGE HEADER -->
+	<header id="header" class="page-header">
+		<div class="page-header-container">
+			<div class="logo">
+				<h1>
+					<a href="/" title="RhymeTime">RhymeTime</a>
+				</h1>
+			</div>
+			<div class="search">
+				<input type="text" class="search-input" placeholder="What word are we rhyming?">
+				<button class="search-button">Rhyme!</button>
+			</div>
+		</div>
+	</header>
+	<!-- END PAGE HEADER -->
+	<!-- SEARCH TERM -->
+	<div class="search-term-container">
+		<h1 class="search-term"></h1>
+	</div>
+	<!-- END SEARCH TERM -->
 </body>
 </html>
