@@ -1,0 +1,46 @@
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.page-header {
+  width: 100%
+  margin: 0 auto;
+}
+
+.page-header-container {
+  position: relative;
+}
+
+.logo {
+  position: relative;
+  width: 30%;
+  margin: 0 auto;
+  font-family: 'Rock Salt', cursive;
+  line-height: 1.5;
+}
+
+.logo a {
+  width: 100%;
+  text-decoration: none;
+}
+
+.search {
+  position: relative;
+  width: 50%;
+  height: 2em;
+  margin: 0 auto;
+}
+
+.search-input {
+  width: 75%;
+  height: 100%;
+  padding-left: .5em;
+}
+
+.search-button {
+  width: 20%;
+  height: 100%;
+  margin: 0 1.95%;
+}
