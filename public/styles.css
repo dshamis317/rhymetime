@@ -52,3 +52,7 @@
   float: left;
   margin: 0 1.95%;
 }
+
+.search-term {
+  text-transform: uppercase;
+}
