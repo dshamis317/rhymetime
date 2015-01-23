@@ -14,6 +14,10 @@
 		<h2><span class="word-type"><%- definition.word.partOfSpeech %> - <span><span class="definition"><%- definition.word.definition %></span></h2>
 	</script>
 
+	<script type="text/template" id="rhyme-template">
+		<h2><%- rhyme.word %></span></h2>
+	</script>
+
 	<!-- Backbone -->
 	<script type="text/javascript" src="/javascripts/backbone/models/definitionModel.js"></script>
 	<script type="text/javascript" src="/javascripts/backbone/models/rhymeModel.js"></script>
@@ -59,5 +63,10 @@
 		<ul class="definitions"></ul>
 	</div>
 	<!-- END WORD BREAKDOWN -->
+	<!-- RHYMES -->
+	<div class="rhymes-container">
+		<ul class="rhymes"></ul>
+	</div>
+	<!-- END RHYMES -->
 </body>
 </html>

@@ -18,6 +18,7 @@ function getQueryData() {
 		window.location.hash = $query;
     	// $searchInput.val('');
     	getWordData($query);
+		getRhymeData($query);
 	})
 }
 
@@ -32,8 +33,18 @@ function getWordData(word) {
 			} else {
 				renderSyllables(data.syllables);
 				doBackboneDefinitions(data.results);
-				console.log(data);
 			}
+		}
+	});
+}
+
+function getRhymeData(word) {
+	$.ajax({
+		url: '/rhymes/' + word,
+		method: 'get',
+		dataType: 'json',
+		success: function(data) {
+			doBackboneRhymes(data.rhymes);
 		}
 	});
 }
@@ -46,6 +57,17 @@ function doBackboneDefinitions(array) {
 	})
 	$.each(array, function() {
 		$definitionCollection.add({word: this})
+	})
+}
+
+function doBackboneRhymes(array) {
+	var $rhymeCollection = new RhymeTime.Collections.RhymeCollection();
+	var $rhymeListView = new RhymeTime.Views.RhymeListView({
+		collection: $rhymeCollection,
+		el: $('.rhymes')
+	})
+	$.each(array, function() {
+		$rhymeCollection.add({word: this})
 	})
 }
 
