@@ -9,6 +9,11 @@
 	<script type="text/javascript" src="/javascripts/libraries/underscore.js"></script>
 	<script type="text/javascript" src="/javascripts/libraries/backbone.js"></script>
 
+	<!-- Templates -->
+	<script type="text/template" id="definition-template">
+		<h2><span class="word-type"><%- definition.word.partOfSpeech %> - <span><span class="definition"><%- definition.word.definition %></span></h2>
+	</script>
+
 	<!-- Backbone -->
 	<script type="text/javascript" src="/javascripts/backbone/models/definitionModel.js"></script>
 	<script type="text/javascript" src="/javascripts/backbone/models/rhymeModel.js"></script>
@@ -49,10 +54,10 @@
 		</div>
 	</header>
 	<!-- END PAGE HEADER -->
-	<!-- SEARCH TERM -->
-	<div class="search-term-container">
-		<h1 class="search-term"></h1>
+	<!-- WORD BREAKDOWN -->
+	<div class="definition-container">
+		<ul class="definitions"></ul>
 	</div>
-	<!-- END SEARCH TERM -->
+	<!-- END WORD BREAKDOWN -->
 </body>
 </html>

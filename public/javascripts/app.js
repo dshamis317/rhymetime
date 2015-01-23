@@ -15,11 +15,10 @@ function getQueryData() {
 		e.preventDefault();
 		var $searchInput = $('.search-input');
 		var $query = $searchInput.val().toLowerCase();
-    // $searchInput.val('');
-    var $searchDiv = $('.search-term');
-    $searchDiv.html($query);
-    getWordData($query);
-})
+		window.location.hash = $query;
+    	// $searchInput.val('');
+    	getWordData($query);
+	})
 }
 
 function getWordData(word) {
@@ -32,10 +31,22 @@ function getWordData(word) {
 				renderErrorMsg();
 			} else {
 				renderSyllables(data.syllables);
+				doBackboneDefinitions(data.results);
 				console.log(data);
 			}
 		}
 	});
+}
+
+function doBackboneDefinitions(array) {
+	var $definitionCollection = new RhymeTime.Collections.DefinitionCollection();
+	var $definitionListView = new RhymeTime.Views.DefinitionListView({
+		collection: $definitionCollection,
+		el: $('.definitions')
+	})
+	$.each(array, function() {
+		$definitionCollection.add({word: this})
+	})
 }
 
 function renderErrorMsg() {
@@ -43,9 +54,9 @@ function renderErrorMsg() {
 }
 
 function renderSyllables(array) {
-	var $container = $('<div>').addClass('syllable-container').appendTo($('.search-term-container'));
-	var $syllableCount = $('<div>').addClass('syllable-count').html(array.count).appendTo($container);
-	var $syllableList = $('<h2>').addClass('syllable-list').appendTo($container);
+	var $container = $('<div>').addClass('syllable-container').prependTo($('.definition-container'));
+	//var $syllableCount = $('<div>').addClass('syllable-count').html(array.count).appendTo($container);
+	var $syllableList = $('<h1>').addClass('syllable-list').appendTo($container);
 	$.each(array.list, function() {
 		$('<span>').addClass('syllable').html(this).appendTo($syllableList);
 	});
