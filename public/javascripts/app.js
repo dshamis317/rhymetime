@@ -1,4 +1,4 @@
-var RhymeSearch = RhymeSearch ||
+var RhymeTime = RhymeTime ||
   {
     Models: {},
     Collections: {},
@@ -47,11 +47,11 @@ function renderSyllables(array) {
   console.log(array);
 }
 
-RhymeSearch.initialize = function() {
+RhymeTime.initialize = function() {
   stretchHeader();
   getQueryData();
 }
 
 $(function() {
-  RhymeSearch.initialize();
+  RhymeTime.initialize();
 });

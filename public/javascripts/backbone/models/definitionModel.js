@@ -1,4 +1,4 @@
-var RhymeSearch = RhymeSearch ||
+var RhymeTime = RhymeTime ||
   {
     Models: {},
     Collections: {},
@@ -6,6 +6,6 @@ var RhymeSearch = RhymeSearch ||
     Router: null
   };
 
-RhymeSearch.Models.Word = Backbone.Model.extend({
+RhymeTime.Models.Definition = Backbone.Model.extend({
   defaults: {}
 });
