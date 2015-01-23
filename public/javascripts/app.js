@@ -66,7 +66,7 @@ function doBackboneRhymes(array) {
 		collection: $rhymeCollection,
 		el: $('.rhymes')
 	})
-	$.each(array, function() {
+	$.each(array.all, function() {
 		$rhymeCollection.add({word: this})
 	})
 }
