@@ -13,6 +13,7 @@ function stretchHeader() {
 function getQueryData() {
 	$('.form').on('submit', function(e) {
 		e.preventDefault();
+		clearPage();
 		var $searchInput = $('.search-input');
 		var $query = $searchInput.val().toLowerCase();
 		window.location.hash = $query;
@@ -72,7 +73,10 @@ function doBackboneRhymes(array) {
 }
 
 function renderErrorMsg() {
-	console.log('NO DATA HERE');
+	var $message = $('<h1>').html("That's not a real word. Try again...");
+	var $container = $('<div>').addClass('error-msg')
+	.html($message)
+	.prependTo($('.definition-container'));
 }
 
 function renderSyllables(array) {
@@ -83,6 +87,11 @@ function renderSyllables(array) {
 		$('<span>').addClass('syllable').html(this).appendTo($syllableList);
 	});
 	return;
+}
+
+function clearPage() {
+	$('.error-msg, .syllable-container').remove();
+	$('.definitions, .rhymes').html('');
 }
 
 RhymeTime.initialize = function() {
